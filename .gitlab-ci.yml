@@ -1,0 +1,47 @@
+stages:
+  - build
+  - test
+  - quality_gate
+  - deploy
+
+# 定义 test_job 作业
+test_job:
+  stage: test
+  script:
+    - ./mvnw test  # 执行测试
+    - ./mvnw jacoco:report  # 生成覆盖率报告
+  artifacts:
+    paths:
+      - target/jacoco.exec  # 存储覆盖率文件供后续作业使用
+  only:
+    - dev  # 或者你希望运行此作业的分支
+
+# 针对 dev 分支
+sonarqube_dev:
+  stage: quality_gate
+  script:
+    - ./mvnw sonar:sonar -Dsonar.projectKey=vzheng_basicspringboot_4c07d101-3e3b-470a-a150-eb75136f5cbc -Dsonar.host.url=http://192.168.2.25:9000/ -Dsonar.login=$SONAR_TOKEN
+  only:
+    - DEV
+  dependencies:
+    - test_job
+
+# 针对 uat 分支
+sonarqube_uat:
+  stage: quality_gate
+  script:
+    - ./mvnw sonar:sonar -Dsonar.projectKey=vzheng_basicspringboot_4c07d101-3e3b-470a-a150-eb75136f5cbc -Dsonar.host.url=http://192.168.2.25:9000/ -Dsonar.login=$SONAR_TOKEN
+  only:
+    - uat
+  dependencies:
+    - test_job
+
+# 针对 main 分支
+sonarqube_main:
+  stage: quality_gate
+  script:
+    - ./mvnw sonar:sonar -Dsonar.projectKey=vzheng_basicspringboot_4c07d101-3e3b-470a-a150-eb75136f5cbc -Dsonar.host.url=http://192.168.2.25:9000/ -Dsonar.login=$SONAR_TOKEN
+  only:
+    - main
+  dependencies:
+    - test_job
