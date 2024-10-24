@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: BasicSpringBoot
+  config:
+    activate:
+      on-profile: prod
