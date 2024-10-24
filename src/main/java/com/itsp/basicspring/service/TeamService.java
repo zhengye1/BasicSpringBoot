@@ -19,5 +19,4 @@ public interface TeamService extends IService<Team> {
 
     TeamDTO getById(Long id);
 
-    List<TeamDTO> getByName(String name);
 }

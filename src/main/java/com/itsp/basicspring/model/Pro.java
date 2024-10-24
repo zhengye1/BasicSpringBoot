@@ -33,7 +33,7 @@ public class Pro implements Serializable {
     private String proName;
 
     @TableField("team_id")
-    private Integer teamId;
+    private Long teamId;
 
     @TableField("birth")
     private String birth;

@@ -1,22 +1,20 @@
 package com.itsp.basicspring.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.itsp.basicspring.dao.TeamMapper;
 import com.itsp.basicspring.dto.ProDTO;
 import com.itsp.basicspring.dto.TeamDTO;
 import com.itsp.basicspring.exception.NotFoundException;
 import com.itsp.basicspring.model.Pro;
 import com.itsp.basicspring.model.Team;
-import com.itsp.basicspring.dao.TeamMapper;
 import com.itsp.basicspring.service.ProService;
 import com.itsp.basicspring.service.TeamService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * <p>
@@ -62,8 +60,4 @@ public class TeamServiceImpl extends ServiceImpl<TeamMapper, Team> implements Te
 
     }
 
-    @Override
-    public List<TeamDTO> getByName(String name) {
-        return List.of();
-    }
 }

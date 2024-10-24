@@ -1,24 +1,19 @@
 package com.itsp.basicspring.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.itsp.basicspring.dao.TeamMapper;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.itsp.basicspring.dao.ProMapper;
 import com.itsp.basicspring.dto.ProDTO;
+import com.itsp.basicspring.dto.TeamDTO;
 import com.itsp.basicspring.exception.NotFoundException;
 import com.itsp.basicspring.model.Pro;
-import com.itsp.basicspring.dao.ProMapper;
-import com.itsp.basicspring.model.Team;
 import com.itsp.basicspring.service.ProService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.itsp.basicspring.service.TeamService;
-import jakarta.annotation.Resource;
-import org.apache.ibatis.annotations.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 /**
  * <p>
@@ -75,9 +70,9 @@ public class ProServiceImpl extends ServiceImpl<ProMapper, Pro> implements ProSe
             .build();
 
         // 根据 teamId 查询队伍名称
-        Team team = teamService.getById(pro.getTeamId());
+        TeamDTO team = teamService.getById(pro.getTeamId());
         if (team != null) {
-            dto.setTeamName(team.getTeamName());
+            dto.setTeamName(team.getName());
         }
         return dto;
     }
