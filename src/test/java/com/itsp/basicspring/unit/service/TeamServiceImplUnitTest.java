@@ -49,6 +49,7 @@ class TeamServiceImplUnitTest {
         team = new Team();
         team.setId(1L);
         team.setTeamName("Test Team");
+        team.setTeamCode("Test Team Code");
 
         // 统一模拟 ProService 的行为
         when(proService.list(any(QueryWrapper.class))).thenReturn(pros);

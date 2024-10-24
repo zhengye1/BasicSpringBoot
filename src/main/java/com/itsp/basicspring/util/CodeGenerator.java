@@ -2,27 +2,24 @@ package com.itsp.basicspring.util;
 
 import com.baomidou.mybatisplus.generator.FastAutoGenerator;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
-import lombok.extern.slf4j.Slf4j;
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.InputStream;
 import java.nio.file.Paths;
 import java.util.Map;
 
-@Slf4j
 public class CodeGenerator {
     public static void main(String[] args) {
         Yaml yaml = new Yaml();
-        InputStream inputStream = CodeGenerator.class
-            .getResourceAsStream("application-dev.yaml"); //This assumes that youryamlfile.yaml is on the classpath
+        InputStream inputStream = CodeGenerator.class.getResourceAsStream(
+            "application-dev.yaml"); //This assumes that youryamlfile.yaml is on the classpath
         Map<String, Object> obj = yaml.load(inputStream);
         final String url = obj.get("spring.datasource.url").toString();
         final String root = obj.get("spring.datasource.username").toString();
         final String password = obj.get("spring.datasource.password").toString(); // need to decrypt
 
         // 使用 FastAutoGenerator 快速配置代码生成器
-        FastAutoGenerator.create(url, root , password)
-            .globalConfig(builder -> builder.author("Vincent Zheng") // 设置作者
+        FastAutoGenerator.create(url, root, password).globalConfig(builder -> builder.author("Vincent Zheng") // 设置作者
                 .outputDir(Paths.get(System.getProperty("user.dir")) + "/src/main/java").disableOpenDir() // 输出目录
             ).packageConfig(builder -> builder.parent("com.itsp.basicspring") // 设置父包名
                 .entity("model") // 设置实体类包名
