@@ -12,7 +12,7 @@ This is a basic Spring Boot project with a REST API and a database connection an
 |---------------------------------------------------------------------------------------------|------------------|----------------|
 | [Spring Boot](https://spring.io/projects/spring-boot)                                       | 应用开发框架           | 3.3.4          |
 | [MySQL](https://www.mysql.com/cn/)                                                          | 数据库服务器           | 5.7 / 8.0+     |
-| [MyBatis Plus](https://mp.baomidou.com/)                                                    | MyBatis 增强工具包    | 3.5.7          |
+| [MyBatis Plus](https://mp.baomidou.com/)                                                    | MyBatis 增强工具包    | 3.5.8          |
 | [Redis](https://redis.io/)                                                                  | key-value 数据库    | 5.0 / 6.0 /7.0 |
 | [Redisson](https://github.com/redisson/redisson)                                            | Redis 客户端        | 3.32.0         |
 | [Spring MVC](https://github.com/spring-projects/spring-framework/tree/master/spring-webmvc) | MVC 框架           | 6.1.10         |

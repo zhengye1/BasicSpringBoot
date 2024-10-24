@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: BasicSpringBoot
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    url: jdbc:mysql://192.168.2.25:3306/basic
+    username: root
+    password: ENC(Glkqsu6yhKP+NaSimUHeBG2br32FMXplqWr0onOFSxvsDKVNFM7R8xMJxqXjTBWD)
+
+server:
+  port: 8080
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+jasypt:
+  encryptor:
+    algorithm: PBEWITHHMACSHA512ANDAES_256
+    key-obtention-iterations: 1000
+    pool-size: 1
+    provider-name: SunJCE
+    salt-generator-classname: org.jasypt.salt.RandomSaltGenerator
+    iv-generator-classname: org.jasypt.iv.RandomIvGenerator
+    string-output-type: base64
