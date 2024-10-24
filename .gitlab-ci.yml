@@ -1,0 +1,29 @@
+# 针对 dev 分支
+sonarqube_dev:
+  stage: quality_gate
+  script:
+    - ./mvnw sonar:sonar -Dsonar.projectKey=vzheng_basicspringboot_4c07d101-3e3b-470a-a150-eb75136f5cbc -Dsonar.host.url=http://192.168.2.25:9000/ -Dsonar.login=$SONAR_TOKEN
+  only:
+    - DEV
+  dependencies:
+    - test_job
+
+# 针对 uat 分支
+sonarqube_uat:
+  stage: quality_gate
+  script:
+    - ./mvnw sonar:sonar -Dsonar.projectKey=vzheng_basicspringboot_4c07d101-3e3b-470a-a150-eb75136f5cbc -Dsonar.host.url=http://192.168.2.25:9000/ -Dsonar.login=$SONAR_TOKEN
+  only:
+    - uat
+  dependencies:
+    - test_job
+
+# 针对 main 分支
+sonarqube_main:
+  stage: quality_gate
+  script:
+    - ./mvnw sonar:sonar -Dsonar.projectKey=vzheng_basicspringboot_4c07d101-3e3b-470a-a150-eb75136f5cbc -Dsonar.host.url=http://192.168.2.25:9000/ -Dsonar.login=$SONAR_TOKEN
+  only:
+    - main
+  dependencies:
+    - test_job
