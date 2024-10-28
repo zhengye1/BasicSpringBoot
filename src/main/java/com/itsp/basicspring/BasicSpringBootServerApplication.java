@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @Slf4j
 public class BasicSpringBootServerApplication {
     public static void main(String[] args) {
-        log.info("Starting BasicSpringBootServerApplication");
+        log.info("Starting BasicSpringBootServerApplication...");
         SpringApplication.run(BasicSpringBootServerApplication.class, args);
     }
 }
