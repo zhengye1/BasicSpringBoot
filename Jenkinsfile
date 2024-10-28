@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+        jdk 'jdk-21'  // Jenkins 中配置的 JDK 名称
+    }
+
     environment {
         SONAR_TOKEN = '7fc6ca324844d8cc65b6a051e70ca26c629703d6' // 在 Jenkins 中配置的 SonarCloud Token
         SONAR_HOST_URL = 'https://sonarcloud.io'
