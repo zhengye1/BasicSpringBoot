@@ -131,8 +131,8 @@
                 </executions>
                 <configuration>
                     <excludes>
-                        <exclude>com/itsp/basicspring/util/CodeGenerator.class</exclude>
-                        <exclude>com/itsp/basicspring/BasicSpringBootServerApplication.class</exclude>
+                        <exclude>com/itsp/basicspring/util/CodeGenerator.java</exclude>
+                        <exclude>com/itsp/basicspring/BasicSpringBootServerApplication.java</exclude>
                     </excludes>
                 </configuration>
             </plugin>
