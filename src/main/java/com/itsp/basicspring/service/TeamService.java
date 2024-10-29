@@ -3,6 +3,8 @@ package com.itsp.basicspring.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.itsp.basicspring.dto.TeamDTO;
 import com.itsp.basicspring.model.Team;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -14,6 +16,7 @@ import java.util.List;
  * @author Vincent Zheng
  * @since 2024-10-23
  */
+
 public interface TeamService extends IService<Team> {
     List<TeamDTO> listAllTeams();
 

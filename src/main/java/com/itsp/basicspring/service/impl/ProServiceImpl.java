@@ -12,6 +12,7 @@ import com.itsp.basicspring.service.TeamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -24,6 +25,7 @@ import java.util.List;
  * @since 2024-10-23
  */
 @Service
+@Transactional
 public class ProServiceImpl extends ServiceImpl<ProMapper, Pro> implements ProService {
 
     private final TeamService teamService;
@@ -57,6 +59,7 @@ public class ProServiceImpl extends ServiceImpl<ProMapper, Pro> implements ProSe
         List<Pro> pros = super.list();  // 获取所有的 Pro 数据
         return pros.stream().map(this::convertToDto).toList();  // 转换为 ProDto
     }
+
 
     // 将 Pro 转换为 ProDto 并填充 teamName
     private ProDTO convertToDto(Pro pro) {

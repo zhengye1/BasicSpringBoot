@@ -1,9 +1,11 @@
 package com.itsp.basicspring.controller;
 
 import com.itsp.basicspring.dto.ProDTO;
+import com.itsp.basicspring.model.Pro;
 import com.itsp.basicspring.service.ProService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,8 +23,11 @@ import java.util.List;
 @Slf4j
 public class ProController {
 
-    @Resource
     ProService proService;
+
+    public ProController(ProService proService) {
+        this.proService = proService;
+    }
 
     @GetMapping
     public List<ProDTO> listAllPros(@RequestParam(required = false) String name) {
@@ -30,7 +35,7 @@ public class ProController {
             List<ProDTO> pro = proService.getByName(name);
             log.info("ProController - getProByName: {}", pro);
             return pro;
-        }else{
+        } else {
             List<ProDTO> pros = proService.listAllPros();
             log.info("ProController - listAllPros: {}", pros);
             return pros;

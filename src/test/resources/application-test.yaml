@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost/testdb  # 这个会被 Testcontainers 动态配置覆盖
+    username: root
+    password: test
+  sql:
+    init:
+      mode: always  # 强制加载 schema.sql 和 data.sql 文件
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  # MyBatis 配置

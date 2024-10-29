@@ -20,10 +20,10 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest(ProController.class)  // 仅加载 ProController 相关的 Spring 上下文
+//@WebMvcTest(ProController.class)  // 仅加载 ProController 相关的 Spring 上下文
 class ProControllerUnitTest {
 
-    @Autowired
+    //@Autowired
     private MockMvc mockMvc;
 
     @MockBean
