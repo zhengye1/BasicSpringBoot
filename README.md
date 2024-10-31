@@ -5,6 +5,8 @@ This is a basic Spring Boot project with a REST API and a database connection an
  <img src="https://img.shields.io/badge/Spring%20Boot-3.3.4-blue.svg" alt="Downloads">
 </p>
 
+[![SonarCloud Analysis](https://github.com/zhengye1/BasicSpringBoot/actions/workflows/sonarcloud.yml/badge.svg)](https://github.com/zhengye1/BasicSpringBoot/actions/workflows/sonarcloud.yml)
+
 ## 🐨 技术栈
 
 ### 框架
