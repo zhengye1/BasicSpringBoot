@@ -1,11 +1,8 @@
 package com.itsp.basicspring.controller;
 
 import com.itsp.basicspring.dto.ProDTO;
-import com.itsp.basicspring.model.Pro;
 import com.itsp.basicspring.service.ProService;
-import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -31,16 +28,15 @@ public class ProController {
 
     @GetMapping
     public List<ProDTO> listAllPros(@RequestParam(required = false) String name) {
+        List<ProDTO> pros;
         if (name != null) {
-            List<ProDTO> pro = proService.getByName(name);
-            log.info("ProController - getProByName: {}", pro);
-            return pro;
+            pros = proService.getByName(name);
+            log.info("ProController - getProByName: {}", pros);
         } else {
-            List<ProDTO> pros = proService.listAllPros();
+            pros = proService.listAllPros();
             log.info("ProController - listAllPros: {}", pros);
-            return pros;
         }
-
+        return pros;
     }
 
     @GetMapping("/{id}")

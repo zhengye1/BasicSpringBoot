@@ -13,7 +13,6 @@ import com.itsp.basicspring.service.TeamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -26,7 +25,6 @@ import java.util.List;
  * @since 2024-10-23
  */
 @Service
-@Transactional
 public class TeamServiceImpl extends ServiceImpl<TeamMapper, Team> implements TeamService {
 
     private final ProService proService;
