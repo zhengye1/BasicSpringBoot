@@ -35,7 +35,7 @@ public class ProController {
             pros = proService.listAllPros();
             log.info("ProController - listAllPros: {}", pros);
         }
-        return pros;
+
     }
 
     @GetMapping("/{id}")
