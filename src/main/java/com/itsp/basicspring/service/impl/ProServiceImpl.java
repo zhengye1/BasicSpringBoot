@@ -58,7 +58,6 @@ public class ProServiceImpl extends ServiceImpl<ProMapper, Pro> implements ProSe
         return pros.stream().map(this::convertToDto).toList();  // 转换为 ProDto
     }
 
-
     // 将 Pro 转换为 ProDto 并填充 teamName
     private ProDTO convertToDto(Pro pro) {
         ProDTO dto = ProDTO.builder()

@@ -19,7 +19,6 @@ import java.util.List;
 @RequestMapping("/pro")
 @Slf4j
 public class ProController {
-
     ProService proService;
 
     public ProController(ProService proService) {

@@ -2,7 +2,6 @@ package com.itsp.basicspring.dao;
 
 import com.itsp.basicspring.model.Pro;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
