@@ -6,8 +6,8 @@ on:
       - main
   pull_request:
     branches:
-      - dev      # feature 到 dev 的 PR 进行检查
-      - uat      # feature 到 uat 的 PR 进行检查
+      - DEV      # feature 到 dev 的 PR 进行检查
+      - UAT      # feature 到 uat 的 PR 进行检查
       - main     # feature 到 main 的 PR 进行最终检查
 
 jobs:
@@ -44,3 +44,4 @@ jobs:
             -Dsonar.organization=zhengye1 \
             -Dsonar.host.url=https://sonarcloud.io \
             -Dsonar.token=$SONAR_TOKEN -Dsonar.coverage.exclusions=**/com/itsp/basicspring/util/CodeGenerator.java,**/com/itsp/basicspring/BasicSpringBootServerApplication.java
+
