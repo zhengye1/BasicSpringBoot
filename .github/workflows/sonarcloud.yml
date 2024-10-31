@@ -1,6 +1,9 @@
 name: SonarCloud Analysis
 
 on:
+  push:
+    branches:
+      - main
   pull_request:
     branches:
       - dev      # feature 到 dev 的 PR 进行检查
@@ -40,4 +43,5 @@ jobs:
             -Dsonar.projectKey=zhengye1_BasicSpringBoot \
             -Dsonar.organization=zhengye1 \
             -Dsonar.host.url=https://sonarcloud.io \
-            -Dsonar.login=$SONAR_TOKEN -Dsonar.coverage.exclusions=**/com/itsp/basicspring/util/CodeGenerator.java,**/com/itsp/basicspring/BasicSpringBootServerApplication.java
+            -Dsonar.token=$SONAR_TOKEN -Dsonar.coverage.exclusions=**/com/itsp/basicspring/util/CodeGenerator.java,**/com/itsp/basicspring/BasicSpringBootServerApplication.java
+
